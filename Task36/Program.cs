@@ -1,5 +1,5 @@
 ﻿
-int[] array = new int[15];
+int[] array = new int[6];
 
 void FullArray(int[] collect)
 {
@@ -7,7 +7,7 @@ void FullArray(int[] collect)
     int index = 0;
     while(index < lenght)
     {
-        collect[index] = new Random().Next(100,999);
+        collect[index] = new Random().Next(-100,100);
         index++;
     }
 }
@@ -23,34 +23,28 @@ void PrintArray(int[] col)
     }
 }
 
-int SearchEL(int[] ar)
+int SearchSUM(int[] ar)
 {
     int countAR = ar.Length;
     int ind = 0;
-    int countEL = 0;
+    int sum = 0;
     while(ind < countAR)
     {
-        if(ar[ind] % 2 == 0)
+        if(ind % 2 != 0)
         {
-            countEL++;
+            sum += ar[ind];
         }
         ind++;
     }
-    return countEL;
+    return sum;
 }
 
 void PrintResault()
 {
-    int count2el = SearchEL(array);
-    if(count2el == 0)
-    {
-    Console.WriteLine("Четные числа в массиве отсутствуют!");
-    }
-    else
-    {
-        Console.Write("Колличество четных эллементов массива составляет: ");
-        Console.WriteLine(count2el);
-    }
+    int resaultsum = SearchSUM(array);
+   
+    Console.Write("Сумма чисел массива стоящих на нечетных позициях составляет: ");
+    Console.WriteLine(resaultsum);
 }
 
 Console.WriteLine("Задан массив: ");
@@ -58,4 +52,3 @@ Console.WriteLine("Задан массив: ");
 FullArray(array);
 PrintArray(array);
 PrintResault();
-
