@@ -55,7 +55,7 @@ double SearchMIN(double[] arm)
 }
 void PrintResault()
 {
-    double resaultsum = Math.Abs(SearchMIN(array)) - Math.Abs(SearchMAX(array));
+    double resaultsum = Math.Abs(SearchMAX(array)) - Math.Abs(SearchMIN(array));
    
     Console.Write("Разность между максимальным и минимальным элементом массива составляет: ");
     Console.WriteLine(resaultsum);
